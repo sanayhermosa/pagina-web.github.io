@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Maquillaje Profesional para Principiantes</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Applying background styles to html and body with !important to override external styles */
+        html, body {
+            font-family: 'Inter', sans-serif;
+            background: #FCE7F3 !important; /* Lighter pink background */
+            background-attachment: fixed !important; /* Fixed background */
+            color: #333333; /* General text color */
+            background-image: none !important; /* Ensure no background image */
+            background-repeat: no-repeat !important; /* Prevent any background image from repeating */
+            background-size: auto !important; /* Ensure background size doesn't cause issues */
+        }
+
+        /* Add padding to the top of the body to prevent content from being hidden by the fixed header */
+        body {
+            padding-top: 60px; /* Adjust this value to match the height of your header */
+        }
+
+        /* Specific styles for the main page container */
+        .main-content-wrapper {
+            background-color: #FCE7F3; /* Same background color as body to ensure consistency */
+            background-image: none !important; /* Ensure no background image here either */
+            background-repeat: no-repeat !important;
+            background-size: auto !important;
+        }
+
+        /* Custom styles for the main CTA button */
+        .cta-button {
+            background: linear-gradient(to right, #EC4899, #DB2777); /* Pink-500 to Pink-600 */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 5px 15px rgba(219, 39, 119, 0.4); /* Stronger shadow based on pink-600 */
+            font-size: 1.5rem; /* Adjusted font size */
+            padding: 1rem 2.5rem; /* Adjusted padding */
+            display: inline-block;
+            width: auto;
+            max-width: none;
+            border-radius: 9999px;
+            text-align: center;
+            color: white;
+            font-weight: 700;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(219, 39, 119, 0.5);
+        }
+
+        /* Styles for the content containers */
+        .content-container {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1), 0 4px 8px -2px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        /* Styles for bullet points */
+        ul.custom-bullets li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            text-align: left !important;
+            font-size: 1.125rem;
+        }
+        ul.custom-bullets li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #EC4899; /* Pink checkmark to match theme */
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+        
+        /* Styles for the hero title section */
+        .hero-title-section {
+            background: linear-gradient(135deg, #FFF1F2, #FEF9C3); /* Soft Pink to Light Yellow */
+            padding: 2rem 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 5px 15px rgba(252, 228, 236, 0.6), 0 2px 8px rgba(224, 224, 224, 0.4);
+            text-align: center;
+        }
+        .hero-title-section h1 {
+            font-size: 2.25rem; /* Adjusted for longer text */
+            line-height: 1.2;
+            font-weight: 900;
+            color: #4A044E; /* Dark Purple for contrast */
+            margin-bottom: 0.75rem;
+        }
+        .hero-title-section p {
+            font-size: 1.25rem;
+            color: #831843; /* Dark Pink for subtitle */
+            font-weight: 500;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Image and Video container styles */
+        .instructor-image-container, .guarantee-image-container, .certification-image-container, .course-module-media, .bonus-ebook-image, .testimonial-image-container, .before-after-container {
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+        .instructor-image-container img, .guarantee-image-container img, .certification-image-container img, .course-module-media video, .course-module-media img, .bonus-ebook-image img, .testimonial-image-container img, .before-after-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .instructor-image-container, .testimonial-image-container {
+            width: 150px;
+            height: 150px;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+        }
+        .testimonial-image-container {
+             width: 120px;
+             height: 120px;
+        }
+        .guarantee-image-container {
+            width: 150px;
+            height: 150px;
+            margin: 1.5rem auto 0;
+        }
+        .course-module-media {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            height: auto;
+            margin: 0 auto 1rem;
+        }
+        .bonus-ebook-image {
+            max-width: 350px;
+            height: auto;
+            margin: 0 auto 1rem; /* Adjusted margin */
+        }
+        .certification-image-container {
+            width: 100%;
+            max-width: 500px; /* Increased size for better visibility */
+            height: auto;
+            margin: 1.5rem auto 0;
+            border: 8px solid #fdf2f8; /* Added a light pink border */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Grid fix for course modules */
+        .course-modules-grid {
+            display: grid !important;
+            gap: 1.5rem !important;
+            align-items: flex-start;
+        }
+        @media (min-width: 768px) {
+            .course-modules-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+        @media (max-width: 767px) and (min-width: 640px) {
+            .course-modules-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        @media (max-width: 639px) {
+            .course-modules-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .cta-button {
+                font-size: 1.1rem !important;
+                padding: 0.8rem 1.5rem !important;
+                width: 100% !important;
+                max-width: 300px !important;
+            }
+            .hero-title-section h1 { font-size: 1.875rem !important; }
+            .hero-title-section p { font-size: 1.1rem !important; }
+            .content-container { padding: 1.5rem !important; margin-bottom: 1.5rem !important; }
+            ul.custom-bullets li { padding-left: 1.5rem !important; font-size: 1rem !important; }
+            ul.custom-bullets li::before { font-size: 1.1rem !important; }
+        }
+
+        /* Styles for FAQ section */
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        .faq-question {
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0.75rem 0;
+            position: relative;
+            color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            color: #EC4899;
+        }
+        .faq-question.active::after {
+            content: '−';
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            padding-right: 1rem;
+            color: #555;
+        }
+
+        /* Styles for "What Happens Next" section */
+        .what-happens-next {
+            background-color: #FFF1F2; /* Soft Pink background */
+            border: 1px solid #FECDD3; /* Pink border */
+            color: #831843; /* Dark Pink text color */
+        }
+        
+        /* NEW: Styles for Bonus Section */
+        .bonus-section {
+            background: linear-gradient(135deg, #fdf2f8, #fefce8); /* rose-50 to yellow-50 */
+            border: 2px solid #fbcfe8; /* rose-200 border */
+            box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.1), 0 8px 10px -6px rgba(236, 72, 153, 0.1);
+        }
+        .bonus-section h2 .fa-star {
+            color: #f59e0b; /* amber-500 */
+            text-shadow: 0 0 10px #fde047; /* yellow-300 glow */
+        }
+
+        /* Professional Look Adjustments */
+        .module-card {
+            background-color: #f8fafc; /* Consistent light gray background */
+            padding: 1rem;
+        }
+        .testimonial-name {
+            color: #be185d; /* Consistent pink for all testimonial names */
+        }
+        /* NEW: Before & After Section */
+        .before-after-container {
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            aspect-ratio: 1 / 1; /* Make it square */
+        }
+        .before-after-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            padding: 0.25rem;
+            font-size: 0.875rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .benefit-icon-container {
+            margin-bottom: 1rem;
+            height: 9rem; /* 144px */
+            width: 9rem; /* 144px */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .benefit-icon-container img {
+             max-height: 100%;
+             max-width: 100%;
+             object-fit: contain;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Fixed Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 shadow-md" style="background: linear-gradient(to right, #be185d, #86198f);">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <img class="h-12 w-auto" src="https://d1yei2z3i6k35z.cloudfront.net/13441133/6885605bc3961_1_Mesadetrabajo1copia6.jpg" alt="Logo Escuela Iberoamericana">
+                </div>
+                <!-- School Name -->
+                <div class="text-white text-center text-sm sm:text-lg font-bold">
+                    Escuela Iberoamericana de Estética y Bienestar
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content-wrapper max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+
+        <!-- Hero Title Section -->
+        <section class="hero-title-section">
+            <h1>
+                Aprende maquillaje desde cero y transforma tu imagen y tu confianza todos los días
+            </h1>
+            <p class="mt-4">“Aprende los secretos de los maquilladores profesionales sin experiencia previa. Te enseño desde cero para que logres verte linda, segura y auténtica… sin complicarte.”</p>
+            <div class="mt-8">
+                <a href="https://pay.hotmart.com/W88270840A?ref=G100614872K&bid=1751946631473" class="cta-button">
+                    👉 Sí, quiero iniciar mi transformación
+                </a>
+                <p class="text-sm font-bold text-gray-800 mt-4 uppercase">POR $15 USD - COMPRA 100% SEGURA - ACCESO INMEDIATO EN TU CORREO ELECTRÓNICO.</p>
+                <div class="mt-8">
+                    <img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/68857b658e596_ChatGPTImage26jul202520_01_07.png" alt="Composición de lo que incluye el curso de maquillaje" class="w-full h-auto rounded-lg shadow-md max-w-xl mx-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Before and After Section -->
+        <section class="content-container text-center mt-8">
+            <h2 class="text-3xl font-bold text-pink-600 mb-6">“Si ellas pudieron lograrlo, tu también puedes.”</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Example 1 -->
+                <div class="grid grid-cols-2 gap-4 items-center">
+                    <div class="before-after-container">
+                        <img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/6881539d48f3c_Capturadepantalla2025-07-23161306.png" alt="Foto de antes del maquillaje">
+                        <div class="before-after-label">ANTES</div>
+                    </div>
+                    <div class="before-after-container">
+                        <img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/68815381d26e4_Capturadepantalla2025-07-23161316.png" alt="Foto de después del maquillaje">
+                        <div class="before-after-label">DESPUÉS</div>
+                    </div>
+                </div>
+                <!-- Example 2 -->
+                <div class="grid grid-cols-2 gap-4 items-center">
+                    <div class="before-after-container">
+                        <img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/688701f8d2c60_Capturadepantalla2025-07-27234712-Pica.png" alt="Foto de antes del maquillaje">
+                        <div class="before-after-label">ANTES</div>
+                    </div>
+                    <div class="before-after-container">
+                        <img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/68870203c5557_Capturadepantalla2025-07-27234720-Pica.png" alt="Foto de después del maquillaje">
+                        <div class="before-after-label">DESPUÉS</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem/Solution Section -->
+        <section class="content-container text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">¿Te sientes así a veces?</h2>
+            <ul class="text-lg text-gray-700 space-y-3 custom-bullets text-left mx-auto max-w-2xl">
+                <li><strong>Frustrada</strong> frente al espejo, sin saber qué productos usar o cómo aplicarlos para resaltar tu belleza.</li>
+                <li><strong>Insegura</strong> al salir, sintiendo que tu maquillaje no te representa o que podrías lucir mucho mejor.</li>
+                <li><strong>Abrumada</strong> por la cantidad de tutoriales que prometen mucho pero te dejan con las mismas dudas.</li>
+                <li><strong>Desilusionada</strong> por gastar dinero en cosméticos que terminan olvidados en un cajón.</li>
+                <li><strong>Estancada</strong>, con el sueño de convertir tu pasión por el maquillaje en un ingreso extra, pero sin un plan claro.</li>
+            </ul>
+            <p class="text-xl text-gray-800 mt-8 font-semibold">
+                Si te identificas, no estás sola. Este curso está diseñado para darte el camino claro y sencillo que necesitas.
+            </p>
+        </section>
+
+        <!-- Who is this course for? Section -->
+        <section class="content-container text-center bg-pink-50 border border-pink-200">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Para Quién Es Este Curso?</h2>
+            <p class="text-lg text-gray-700 mb-6">Este curso fue creado pensando en mujeres reales, como tú.</p>
+            <div class="grid md:grid-cols-2 gap-8 text-left">
+                <div class="flex items-start space-x-4">
+                    <i class="fa-solid fa-seedling text-3xl text-pink-500 mt-1"></i>
+                    <div>
+                        <h3 class="text-xl font-bold">La Principiante Absoluta</h3>
+                        <p class="text-gray-700">Que no sabe por dónde empezar y quiere una guía clara y sin complicaciones.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <i class="fa-solid fa-briefcase text-3xl text-pink-500 mt-1"></i>
+                    <div>
+                        <h3 class="text-xl font-bold">La Mujer Ocupada</h3>
+                        <p class="text-gray-700">Que busca una rutina rápida y efectiva para verse increíble en su día a día.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <i class="fa-solid fa-rocket text-3xl text-pink-500 mt-1"></i>
+                    <div>
+                        <h3 class="text-xl font-bold">La Futura Emprendedora</h3>
+                        <p class="text-gray-700">Que sueña con convertir su pasión por el maquillaje en un negocio rentable.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <i class="fa-solid fa-wand-magic-sparkles text-3xl text-pink-500 mt-1"></i>
+                    <div>
+                        <h3 class="text-xl font-bold">La Aficionada Apasionada</h3>
+                        <p class="text-gray-700">Que ya sabe un poco, pero quiere perfeccionar su técnica y aprender secretos profesionales.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-xl text-gray-800 mt-8 font-semibold">✨ Sea cual sea tu punto de partida, este curso te lleva al siguiente nivel.</p>
+        </section>
+
+        <!-- Video Principal -->
+        <section class="text-center mt-8 mb-12">
+            <div class="shadow-lg rounded-xl overflow-hidden">
+                <video class="w-full h-auto" controls playsinline poster="https://d1yei2z3i6k35z.cloudfront.net/13441133/687dc5347a039_Capturadepantalla2025-07-20233313.png" preload="metadata">
+                    <source src="https://d1yei2z3i6k35z.cloudfront.net/13441133/687c1bfe3990e_MaquillajeProfesional.mp4" type="video/mp4">
+                    Tu navegador no soporta el video.
+                </video>
+            </div>
+        </section>
+
+        <!-- What You Will Learn Section -->
+        <section class="content-container">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2 text-center">Presentamos el <strong>Curso de Maquillaje Profesional para Principiantes</strong></h2>
+            <p class="text-xl text-center text-gray-700 mb-6">Domina desde lo básico hasta técnicas profesionales con estos módulos completos:</p>
+            <div class="mb-8">
+                <img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/68857b658e596_ChatGPTImage26jul202520_01_07.png" alt="Composición de lo que incluye el curso de maquillaje" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            <div class="course-modules-grid">
+                <!-- Module 1 -->
+                <div class="module-card rounded-lg shadow-sm flex flex-col">
+                    <div class="course-module-media">
+                        <video class="w-full h-full" controls playsinline poster="https://d1yei2z3i6k35z.cloudfront.net/13441133/687dc3ab6b421_MaquillajedeD%C3%ADa.png" preload="metadata">
+                           <source src="https://d1yei2z3i6k35z.cloudfront.net/13441133/687dcf5deec2a_Maquillajeded%C3%ADavideo.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <ul class="text-md text-gray-700 space-y-2 custom-bullets w-full mt-4">
+                        <li>Armado del maletín</li>
+                        <li>Preparación de la piel</li>
+                        <li>Base y correcciones</li>
+                        <li>Contorno, rubor e iluminador</li>
+                        <li>Look de ojos natural</li>
+                        <li>Cejas y labios perfectos</li>
+                        <li>¡Y mucho más!</li>
+                    </ul>
+                </div>
+                 <!-- Module 2 -->
+                <div class="module-card rounded-lg shadow-sm flex flex-col">
+                     <div class="course-module-media">
+                        <video class="w-full h-full" controls playsinline poster="https://d1yei2z3i6k35z.cloudfront.net/13441133/687dc3a1286c3_MaquillajeNoviasyEventos1.png" preload="metadata">
+                           <source src="https://d1yei2z3i6k35z.cloudfront.net/13441133/687dcf0bd17ac_Maquillajedenovia.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <ul class="text-md text-gray-700 space-y-2 custom-bullets w-full mt-4">
+                        <li>Preparación de piel para novias</li>
+                        <li>Técnica "Halo Eye"</li>
+                        <li>Piel de alta cobertura</li>
+                        <li>Esfumado clásico</li>
+                        <li>Tonos y subtonos</li>
+                        <li>Portfolio y redes sociales</li>
+                        <li>¡Y mucho más!</li>
+                    </ul>
+                </div>
+                 <!-- Module 3 -->
+                <div class="module-card rounded-lg shadow-sm flex flex-col">
+                     <div class="course-module-media">
+                        <video class="w-full h-full" controls playsinline poster="https://d1yei2z3i6k35z.cloudfront.net/13441133/687dc39391714_MaquillajeSocial.png" preload="metadata">
+                           <source src="https://d1yei2z3i6k35z.cloudfront.net/13441133/687c58c1e542a_maquillajeSocial.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <ul class="text-md text-gray-700 space-y-2 custom-bullets w-full mt-4">
+                        <li>Técnica "Semi Cut Crease"</li>
+                        <li>Esfumado diagonal</li>
+                        <li>Maquillaje de noche "Smokey Eye"</li>
+                        <li>Maletín profesional</li>
+                        <li>Colorimetría avanzada</li>
+                        <li>Combinaciones para eventos</li>
+                        <li>¡Y mucho más!</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-xl text-center text-gray-800 mt-8 font-semibold">Todo explicado paso a paso para que aprendas, practiques y mejores de verdad.</p>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="content-container text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">¿Qué vas a lograr al entrenar conmigo?</h2>
+            <ul class="text-lg text-gray-700 space-y-3 custom-bullets text-left mx-auto max-w-2xl">
+                <li>Verte al espejo y decir “¡me encanta cómo me veo!” cada día.</li>
+                <li>Usar los productos adecuados sin gastar de más.</li>
+                <li>Ahorrar tiempo y dinero aprendiendo técnicas profesionales desde casa.</li>
+                <li>Dar tus primeros pasos como maquilladora y emprender a tu ritmo.</li>
+                <li>Sentirte segura, poderosa y linda con lo que ya tienes.</li>
+            </ul>
+            <p class="text-xl text-center text-gray-800 mt-8 font-semibold">Porque maquillarte bien no se trata de tener mil productos, sino de saber cómo usarlos.</p>
+        </section>
+
+        <!-- Course Benefits Section -->
+        <section class="content-container text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">"Una experiencia creada para que te sientas capaz, segura y lista para brillar"</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center">
+                    <div class="benefit-icon-container"><img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/688a9f597f597_3d_illustration_of_female_graphic_designer_character_with_puzzle_pieces___Free_PSD__1_-removebg-preview.png" alt="Icono de flexibilidad"></div>
+                    <h3 class="text-xl font-bold mb-2">Aprende a tu ritmo</h3>
+                    <p class="text-gray-700">Sin horarios fijos ni presiones. Tú eliges cuándo y desde dónde aprender.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="benefit-icon-container"><img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/688571e0b68da_lupapww-removebg-preview.png" alt="Icono de acceso"></div>
+                    <h3 class="text-xl font-bold mb-2">Accede desde cualquier parte</h3>
+                    <p class="text-gray-700">Descarga tus clases y aprende incluso sin conexión. ¡Siempre disponible para ti!</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="benefit-icon-container"><img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/6886ea8639380_Influencer_grabando_nueva_ilustraci%C3%B3n_de_video___Vector_gratuito-removebg-preview.png" alt="Icono de aprendizaje"></div>
+                    <h3 class="text-xl font-bold mb-2">Hecho para ti</h3>
+                    <p class="text-gray-700">Avanza a tu ritmo, repite clases y disfruta un aprendizaje 100% flexible.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="benefit-icon-container"><img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/688708017fc37_3Diconrenderingcertificatelearning_PremiumPSD-Photoroom.png" alt="Icono de certificado"></div>
+                    <h3 class="text-xl font-bold mb-2">Certificación avalada</h3>
+                    <p class="text-gray-700">Al terminar, obtén tu certificado oficial y abre puertas en el mundo profesional.</p>
+                </div>
+            </div>
+            <p class="text-xl text-center text-gray-800 mt-8 font-semibold">Porque el maquillaje no debería ser complicado, debería empoderarte.</p>
+        </section>
+
+        <!-- Bonus Section -->
+        <section class="content-container text-center bonus-section">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">
+                <i class="fas fa-star text-sm"></i> 
+                🎁 ¡BONO EXCLUSIVO! 
+                <i class="fas fa-star text-sm"></i>
+            </h2>
+            <p class="text-yellow-500 font-bold mb-2">(Valorado en $15 USD, hoy totalmente GRATIS)</p>
+            <h3 class="text-2xl font-semibold text-pink-600 mb-4">📘 Ebook Digital: “Maquíllate desde el Amor Propio”</h3>
+            <p class="text-lg text-gray-700 mb-4">Una guía emocional y práctica para verte bien desde dentro hacia fuera.</p>
+            <div class="mb-4 flex justify-center">
+                <img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/686ce59ae16b1_ChatGPT_Image_7_jul_2025__17_34_55-removebg-preview.png" alt="Portada del Ebook Maquíllate desde el Amor Propio" class="bonus-ebook-image">
+            </div>
+            <p class="text-md text-gray-700 mb-2">💬 Recíbelo por WhatsApp al finalizar tu compra</p>
+            <p class="text-md text-gray-700 mb-4">Haz clic abajo para reclamar tu bono especial:</p>
+            <a href="https://wa.link/swcqna" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-md transition duration-300 ease-in-out">
+                <i class="fab fa-whatsapp mr-2"></i> Recibir Bono por WhatsApp
+            </a>
+        </section>
+
+        <!-- Offer Stack Section -->
+        <section class="content-container text-center bg-gray-800 text-white">
+            <h2 class="text-3xl font-bold mb-6">¡Todo esto es lo que vas a recibir!</h2>
+            <div class="max-w-2xl mx-auto text-left space-y-4 mb-8">
+                <p class="flex items-center text-lg">✔️ Curso Completo de Maquillaje (3 Módulos) <span class="font-bold ml-auto">(Valor real: $97 USD)</span></p>
+                <p class="flex items-center text-lg">✔️ Acceso de por vida + futuras actualizaciones <span class="font-bold ml-auto">(Valor real: $47 USD)</span></p>
+                <p class="flex items-center text-lg">✔️ Certificado de Finalización <span class="font-bold ml-auto">(Valor real: $30 USD)</span></p>
+                <p class="flex items-center text-lg">✔️ Asesoramiento personalizado <span class="font-bold ml-auto">(Valor real: $49 USD)</span></p>
+                <p class="flex items-center text-lg">✔️ Garantía de satisfacción por 7 días <span class="font-bold ml-auto">(Valor: Invaluable)</span></p>
+                <p class="flex items-center text-lg bg-yellow-300 text-gray-800 p-2 rounded-md"><i class="fa-solid fa-star text-yellow-500 mr-3"></i> <span class="font-bold">BONO EXCLUSIVO:</span> Ebook “Maquíllate desde el Amor Propio” <span class="font-bold ml-auto">(Valor real: $15 USD)</span></p>
+            </div>
+            <p class="text-2xl font-light mb-2">💸 Valor Total: $238 USD</p>
+            <p class="text-4xl font-extrabold text-yellow-300 mb-6">🔥 HOY por un ÚNICO PAGO de solo $15 USD</p>
+            <p class="text-lg text-gray-300 mb-6">Sin mensualidades. Sin pagos ocultos. Acceso inmediato.</p>
+            <a href="https://pay.hotmart.com/W88270840A?ref=G100614872K&bid=1751946631473" class="cta-button">
+                👉 ¡Sí, quiero iniciar mi transformación!
+            </a>
+        </section>
+
+        <!-- Instructor Section -->
+        <section class="content-container text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Conoce a tu Instructora</h2>
+            <div class="instructor-image-container">
+                <img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/686cdf231cc40_profedemaquillaje.png" alt="Foto de la instructora del curso, Ariana Ferreyra" onerror="this.onerror=null;this.src='https://placehold.co/150x150/F8BBD0/333333?text=Ariana';">
+            </div>
+            <h3 class="text-2xl font-semibold text-pink-600 mt-4">Ariana Ferreyra</h3>
+            <p class="text-lg text-gray-700 mt-2 max-w-2xl mx-auto">
+                Ariana Ferreyra es una apasionada del maquillaje profesional. Con años de experiencia no solo en el arte del maquillaje sino también en peinados y extensiones de pestañas, su misión es ayudarte a verte y sentirte increíble, incluso si hoy no sabes por dónde empezar. Enseña con empatía, paso a paso, en un ambiente de apoyo donde todo es posible.
+            </p>
+        </section>
+
+        <!-- Certification Section -->
+        <section class="content-container text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Recibe tu Certificado de Finalización</h2>
+            <p class="text-lg text-gray-700 mb-6">Al finalizar el entrenamiento, recibirás un certificado oficial que respalda tus nuevas habilidades. Ideal si quieres comenzar a trabajar como maquilladora profesional o simplemente sentirte más segura con lo que haces.</p>
+            <div class="certification-image-container">
+                <img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/686cdef8c8a1b_Capturadepantalla2025-07-07225455.png" alt="Ejemplo del Certificado del curso de maquillaje profesional" onerror="this.onerror=null;this.src='https://placehold.co/800x500/FCE4EC/4A044E?text=Certificado';">
+            </div>
+        </section>
+
+        <!-- What Happens Next Section -->
+        <section class="content-container what-happens-next">
+            <h2 class="text-3xl font-bold text-center mb-6">¿Lista para Empezar? Esto es lo que Sucede Después de tu Compra:</h2>
+            <div class="grid md:grid-cols-2 gap-6 text-left">
+                <div class="bg-white/50 p-4 rounded-lg flex items-start space-x-3">
+                    <span class="text-2xl">💌</span>
+                    <p><strong>1. Confirmación inmediata:</strong> Recibirás un correo automático confirmando tu inscripción. ¡Ya eres parte de esta transformación!</p>
+                </div>
+                <div class="bg-white/50 p-4 rounded-lg flex items-start space-x-3">
+                    <span class="text-2xl">🔓</span>
+                    <p><strong>2. Acceso instantáneo:</strong> Desde ese mismo correo podrás entrar al curso completo y reclamar todos tus bonos.</p>
+                </div>
+                <div class="bg-white/50 p-4 rounded-lg flex items-start space-x-3">
+                    <span class="text-2xl">🎯</span>
+                    <p><strong>3. Empieza hoy mismo:</strong> Accede desde tu celular, tablet o compu y comienza a aprender desde el primer minuto.</p>
+                </div>
+                <div class="bg-white/50 p-4 rounded-lg flex items-start space-x-3">
+                    <span class="text-2xl">🤝</span>
+                    <p><strong>4. Soporte cercano y humano:</strong> ¿Tienes dudas? Nuestro equipo está listo para ayudarte a través de WhatsApp o directamente desde la plataforma del curso. Siempre con buena onda y dispuestos a acompañarte en cada paso.</p>
+                </div>
+            </div>
+            <p class="text-center font-bold mt-6">Todo está diseñado para que empieces HOY MISMO, sin demoras.</p>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="content-container text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">¡Nuestras alumnas están felices!</h2>
+            <p class="text-lg text-gray-700 mb-8">Conoce a mujeres reales que, como tú, soñaban con verse y sentirse mejor… y hoy brillan con más confianza.</p>
+            <div class="space-y-12">
+                <!-- Emprendedoras -->
+                <div>
+                    <h3 class="text-2xl font-bold text-pink-600 mb-6">“Ahora emprenden con sus primeros clientes”</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center">
+                            <div class="testimonial-image-container">
+                                <img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/686cdee46bdd3_ElveciaVivianaLora.jpg" alt="Testimonio de Elvecia V." onerror="this.onerror=null;this.src='https://placehold.co/120x120/E1BEE7/333333?text=Elvecia';">
+                            </div>
+                            <div class="text-yellow-400 mb-2 text-2xl">★★★★★</div>
+                            <p class="text-gray-600 italic mb-4">“Excelentes contenidos. Ya estoy recibiendo clientes y me siento segura.”</p>
+                            <p class="font-bold testimonial-name">- Elvecia V.</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center">
+                            <div class="testimonial-image-container">
+                                <img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/687c154e4cb5d_IMG_20240217_012839_790.jpg" alt="Testimonio de Evelyn Pintos">
+                            </div>
+                            <div class="text-yellow-400 mb-2 text-2xl">★★★★★</div>
+                            <p class="text-gray-600 italic mb-4">"Siempre quise emprender en algo de belleza. Este curso me dio la base y la confianza para empezar a ofrecer mis servicios. ¡Ya tengo mis primeras clientas!"</p>
+                            <p class="font-bold testimonial-name">- Evelyn Pintos</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mejora Personal -->
+                <div>
+                    <h3 class="text-2xl font-bold text-pink-600 mb-6">“Se sienten más lindas, seguras y valoradas”</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center">
+                            <div class="testimonial-image-container">
+                                <img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/686cdecd8e31c_Mar%C3%ADaIsabelPerroni.jpg" alt="Testimonio de María Isabel P." onerror="this.onerror=null;this.src='https://placehold.co/120x120/F8BBD0/333333?text=Maria';">
+                            </div>
+                            <div class="text-yellow-400 mb-2 text-2xl">★★★★★</div>
+                            <p class="text-gray-600 italic mb-4">“El curso me ayudó a ver que puedo maquillarme sola y verme genial. Muy recomendado.”</p>
+                            <p class="font-bold testimonial-name">- María Isabel P.</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center">
+                            <div class="testimonial-image-container">
+                                <img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/687c154186836_WhatsAppImage2024-03-22at15.53.01.jpeg" alt="Testimonio de Laura Dora Miño">
+                            </div>
+                            <div class="text-yellow-400 mb-2 text-2xl">★★★★★</div>
+                            <p class="text-gray-600 italic mb-4">"Pensé que sería muy complicado, pero la forma de enseñar de Ariana es súper clara y fácil de seguir. Por fin entiendo cómo usar cada brocha. ¡Lo amé!"</p>
+                            <p class="font-bold testimonial-name">- Laura Dora Miño</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Resultados Rápidos -->
+                <div>
+                    <h3 class="text-2xl font-bold text-pink-600 mb-6">“De no saber nada a maquillarse con seguridad”</h3>
+                    <div class="grid md:grid-cols-1 gap-8 max-w-md mx-auto">
+                         <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center">
+                            <div class="testimonial-image-container">
+                                <img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/687c155c7b37f_IMG_2223.jpg" alt="Testimonio de Sandy Tonna">
+                            </div>
+                            <div class="text-yellow-400 mb-2 text-2xl">★★★★★</div>
+                            <p class="text-gray-600 italic mb-4">"Tenía una boda y no sabía qué hacer. Con lo que aprendí en un fin de semana, me maquillé yo misma y recibí muchísimimos halagos. ¡Me sentí increíble!"</p>
+                            <p class="font-bold testimonial-name">- Sandy Tonna</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12">
+                <p class="text-xl font-semibold text-gray-800 mb-4">¿Quieres ser la próxima historia de éxito?</p>
+                <p class="text-lg text-gray-700 mb-6">Haz clic en el botón y empieza hoy.</p>
+                <a href="https://pay.hotmart.com/W88270840A?ref=G100614872K&bid=1751946631473" class="cta-button">
+                    👉 ¡Sí, quiero iniciar mi transformación!
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="content-container">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Preguntas Frecuentes</h2>
+            <div id="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">¿Es apto para principiantes?</div>
+                    <div class="faq-answer"><p class="pt-2">Sí, el curso está diseñado para guiarte paso a paso, incluso si empiezas desde cero absoluto.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Necesito muchos productos?</div>
+                    <div class="faq-answer"><p class="pt-2">¡No! Te enseñaremos a armar un kit básico y a sacarle el máximo provecho a los productos que ya tienes.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿En qué formato se recibe?</div>
+                    <div class="faq-answer"><p class="pt-2">Recibirás acceso a nuestra plataforma online con videos en alta definición, guías en PDF y el ebook de bono. Puedes verlo todo desde tu celular, tablet o computadora.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Y si no me gusta el curso?</div>
+                    <div class="faq-answer"><p class="pt-2">Tienes garantía de satisfacción 100%. Si no es lo que esperabas, puedes solicitar devolución en los primeros 7 días.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Cómo recibo el bono?</div>
+                    <div class="faq-answer"><p class="pt-2">Una vez confirmada tu compra, recibirás un enlace por WhatsApp para descargar tu ebook "Maquíllate desde el Amor Propio".</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guarantee Section -->
+        <section class="content-container text-center flex flex-col md:flex-row items-center gap-8">
+            <div class="md:w-1/3 flex-shrink-0">
+                <div class="guarantee-image-container">
+                    <img src="https://d1yei2z3i6k35z.cloudfront.net/13441133/686cdf10ed28f_7_dias_garantia.jpg" alt="Sello de Garantía de 7 días" onerror="this.onerror=null;this.src='https://placehold.co/150x150/22c55e/ffffff?text=7+D%C3%ADas';">
+                </div>
+            </div>
+            <div class="md:w-2/3 text-left">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">¡Compra sin miedo, estás protegida!</h2>
+                <p class="text-lg text-gray-700">
+                    Creemos tanto en la transformación que vas a lograr, que tienes 7 días para probar sin riesgo. Si no estás satisfecha, te devolvemos el 100% de tu dinero. Sin excusas. Sin preguntas. <br><strong>Y lo mejor: lo garantiza Hotmart®, la plataforma de pago más segura de cursos online.</strong>
+                </p>
+            </div>
+        </section>
+
+        <!-- Security and Trust Section -->
+        <section class="content-container">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-lock text-4xl text-gray-500 mb-3"></i>
+                    <h3 class="font-bold">Tu compra es confidencial</h3>
+                    <p class="text-sm text-gray-600">Tu información está 100% segura.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-check-circle text-4xl text-gray-500 mb-3"></i>
+                    <h3 class="font-bold">Ambiente 100% protegido</h3>
+                    <p class="text-sm text-gray-600">Ambiente seguro y autenticado.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-envelope text-4xl text-gray-500 mb-3"></i>
+                    <h3 class="font-bold">Accede directo desde tu correo</h3>
+                    <p class="text-sm text-gray-600">Acceso al producto entregado por email.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-bookmark text-4xl text-gray-500 mb-3"></i>
+                    <h3 class="font-bold">Material validado por expertas</h3>
+                    <p class="text-sm text-gray-600">100% revisado y aprobado.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="text-center mt-12 mb-8">
+             <h2 class="text-3xl font-bold text-purple-900 mb-4">No dejes pasar esta oportunidad.</h2>
+             <p class="text-xl text-pink-800 mb-8">Eleva tu look, tu autoestima y tu futuro.</p>
+             <a href="https://pay.hotmart.com/W88270840A?ref=G100614872K&bid=1751946631473" class="cta-button text-2xl">
+                💄 ¡Sí, quiero transformar mi imagen desde hoy!
+            </a>
+        </section>
+        
+    </div>
+
+    <script>
+        // --- Countdown Timer Script ---
+        (function () {
+            // Set the date we're counting down to.
+            // For example, 72 hours from now.
+            const countdownEndDate = new Date().getTime() + (72 * 60 * 60 * 1000);
+
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = countdownEndDate - now;
+
+                if (distance < 0) {
+                    clearInterval(interval);
+                    if(document.getElementById('countdown')) {
+                        document.getElementById('countdown').innerHTML = "<div class='text-xl font-bold text-white bg-red-500 p-4 rounded-lg'>¡La oferta ha terminado!</div>";
+                    }
+                    return;
+                }
+
+                const hours = Math.floor(distance / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                if(hoursEl) hoursEl.innerText = hours < 10 ? '0' + hours : hours;
+                if(minutesEl) minutesEl.innerText = minutes < 10 ? '0' + minutes : minutes;
+                if(secondsEl) secondsEl.innerText = seconds < 10 ? '0' + seconds : seconds;
+            }
+
+            const interval = setInterval(updateCountdown, 1000);
+            updateCountdown(); // run once immediately
+        })(); // <-- Semicolon added for safety
+
+        // --- FAQ Accordion Script ---
+        (function () {
+            const faqContainer = document.getElementById('faq-container');
+            if (faqContainer) {
+                faqContainer.addEventListener('click', function(e) {
+                    const question = e.target.closest('.faq-question');
+                    if (!question) return;
+
+                    const item = question.parentElement;
+                    const answer = item.querySelector('.faq-answer');
+
+                    // Close all other active items
+                    const allItems = faqContainer.querySelectorAll('.faq-item');
+                    allItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-question').classList.remove('active');
+                            otherItem.querySelector('.faq-answer').style.maxHeight = 0;
+                        }
+                    });
+
+                    // Toggle the clicked item
+                    item.classList.toggle('active');
+                    question.classList.toggle('active');
+
+                    if (item.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        answer.style.maxHeight = 0;
+                    }
+                });
+            }
+        })(); // <-- Semicolon added for safety
+
+        // --- Play one video at a time ---
+        (function() {
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => {
+                video.addEventListener('play', () => {
+                    videos.forEach(otherVideo => {
+                        if (otherVideo !== video) {
+                            otherVideo.pause();
+                        }
+                    });
+                });
+            });
+        })(); // <-- Semicolon added for safety
+    </script>
+</body>
+</html>
